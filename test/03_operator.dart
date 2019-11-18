@@ -1,15 +1,23 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:test/test.dart';
 
 void main() {
-//  divOperator();
-//  equalOperator();
-//  equalList();
-//  cascadeOperator();
-//  isOperator();
-//  assignOperator();
-//  assertOperator();
-  errorHandler();
+  test('', () => divOperator());
+
+  test('', () => equalOperator());
+
+  test('', () => equalList());
+
+  test('', () => cascadeOperator());
+
+  test('', () => isOperator());
+
+  test('', () => assignOperator());
+
+  test('', () => assertOperator());
+
+  test('', () => errorHandler());
 }
 
 void divOperator() {
@@ -60,7 +68,7 @@ class CascadeOperatorObject {
 void cascadeOperator() {
   var object = CascadeOperatorObject()
     ..number = 1
-    ..content ='test';
+    ..content = 'test';
   debugPrint('number: ${object.number}; content: ${object.content}');
   // 上下兩段寫法等價
   object = CascadeOperatorObject();
@@ -71,9 +79,11 @@ void cascadeOperator() {
 class IsOperatorTestObject {
   num number;
 }
+
 class IsOperatorTestObject1 extends IsOperatorTestObject {
   num age;
 }
+
 class IsOperatorTestObject2 extends IsOperatorTestObject {
   num amount;
 }
@@ -124,6 +134,7 @@ void assertOperator() {
     assert(age >= 0);
     debugPrint('age: $age');
   }
+
   showAge(12);
   showAge(-2);
 }
@@ -160,9 +171,9 @@ void errorHandler() {
 
   try {
     signIn(account: 'jeff');
-  } on Exception catch(exception) {
+  } on Exception catch (exception) {
     debugPrint('exception: $exception');
-  } catch(error) {
+  } catch (error) {
     debugPrint('error: $error');
   } finally {
     //为了确保不论是否抛出异常，代码都正常运行，请使用 finally 子句
@@ -170,9 +181,9 @@ void errorHandler() {
   }
   try {
     signIn(password: 'is666');
-  } on Exception catch(exception) {
+  } on Exception catch (exception) {
     debugPrint('exception: $exception');
-  } catch(error) {
+  } catch (error) {
     debugPrint('error: $error');
   } finally {
     //为了确保不论是否抛出异常，代码都正常运行，请使用 finally 子句
@@ -180,9 +191,9 @@ void errorHandler() {
   }
   try {
     signIn(account: 'jeff', password: 'is666');
-  } on Exception catch(exception) {
+  } on Exception catch (exception) {
     debugPrint('exception: $exception');
-  } catch(error) {
+  } catch (error) {
     debugPrint('error: $error');
   } finally {
     //为了确保不论是否抛出异常，代码都正常运行，请使用 finally 子句
@@ -192,13 +203,14 @@ void errorHandler() {
   void signInController() {
     try {
       signIn(account: 'jeff');
-    } catch(error) {
+    } catch (error) {
       rethrow; // 可以重新抛出捕获的异常
     }
   }
+
   try {
     signInController();
-  } catch(error) {
+  } catch (error) {
     debugPrint('rethrow error: $error');
   }
 }
