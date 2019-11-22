@@ -1,6 +1,7 @@
 import 'package:jeff_practice/inherit/inherit_1.dart';
 import 'package:jeff_practice/inherit/inherit_2.dart';
 import 'package:jeff_practice/inherit/inherit_3.dart';
+import 'package:jeff_practice/inherit/inherit_4.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -51,8 +52,14 @@ void main() {
     vip2.showMessage();
   });
 
-  // 參考資料： https://kevinwu.cn/p/ae2ce64/
   test('', () {
-
+    print('參考資料： https://kevinwu.cn/p/ae2ce64/');
+    ITTeacher itTeacher = ITTeacher();
+    itTeacher.doWork();
+    itTeacher.fixComputer();
+    SoftwareEngineer softwareEngineer = SoftwareEngineer();
+    softwareEngineer.doWork();
+    softwareEngineer.fixComputer();
+    softwareEngineer.designSoftware();
   });
 }

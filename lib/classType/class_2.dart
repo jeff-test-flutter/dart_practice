@@ -28,8 +28,8 @@ class Logger {
   }
 }
 
-// 抽象类使用abstract关键字定义，是不能被实例化的，通常用来定义接口以及部分实现。
-// 在Dart中，只要类使用了abstract定义，那么它的方法只需要以一个分号来代替方法体，就代表这个方法为抽象方法。
+// 抽象類使用abstract關鍵字定義，是不能被實例化的，通常用來定義接口以及部分實現。
+// 在Dart中，只要類使用了abstract定義，那麼它的方法只需要以一個分號來代替方法體，就代表這個方法為抽象方法。
 abstract class Bird {
   void fly();
 }
@@ -38,4 +38,11 @@ class Sparrow extends Bird {
   void fly() {
     print('起飛~');
   }
+}
+
+// 枚舉的values常量可以返回所有枚舉值
+enum Color {
+  red,
+  green,
+  blue
 }

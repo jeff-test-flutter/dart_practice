@@ -22,10 +22,8 @@ void main() {
     final logger = Logger('UI');
     logger.log('Button clicked');
     Sparrow().fly();
+    print(Color.values);
+    print(Color.red);
   });
 
-  test('', () {
-    print('參考資料： https://kevinwu.cn/p/866bb091 [part3]');
-
-  });
 }

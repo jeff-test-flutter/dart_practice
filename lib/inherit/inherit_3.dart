@@ -36,3 +36,4 @@ class VIP2 extends Member with Guest {
   @override
   void showMessage() => super.showMessage();
 }
+
