@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jeff_practice/rx/rx_1.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,14 +27,22 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
+  void initState() {
+    testObservableInterval();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Builder(builder: (_) {
-              return Container();
-            },),
+            Builder(
+              builder: (_) {
+                return Container();
+              },
+            ),
           ],
         ),
       ),
