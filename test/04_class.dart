@@ -1,5 +1,5 @@
-import 'package:jeff_practice/classType/class_1.dart';
-import 'package:jeff_practice/classType/class_2.dart';
+import 'package:jeff_practice/class_type/class_1.dart';
+import 'package:jeff_practice/class_type/class_2.dart';
 import 'package:test/test.dart';
 
 void main() {

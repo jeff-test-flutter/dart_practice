@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:rxdart/rxdart.dart';
 
 final observableFromStream = Observable(
@@ -20,13 +22,43 @@ void testObservableInterval() {
   ).interval(
     Duration(seconds: 1),
   );
-  observableInterval.listen(print);
+  observableInterval.listen(
+    (number) => print('testObservableInterval: $number'),
+  );
 }
 
 /// 迭代處理數據
 final observableWithMap = Observable(
   Stream.fromIterable([9, 8, 7, 6]),
 ).map((item) => item + 4);
+
+Observable get observableWithFlatMap => Observable(
+  Stream.fromIterable([
+    ['甲'],
+    ['乙', '丙', '丁'],
+    ['戊', '己']
+  ]),
+).flatMap((items) {
+  if (items.length == 3) {
+    return Observable(Stream.fromIterable(items));
+  } else {
+    return Observable.just(null);
+  }
+});
+
+Observable get observableWithConcatMap => Observable(
+  Stream.fromIterable([
+    ['子丑', '寅卯', '辰巳'],
+    ['午未'],
+    ['申酉', '戌亥']
+  ]),
+).concatMap((items) {
+  if (items.length == 1) {
+    return Observable.just('🌱');
+  } else {
+    return Observable(Stream.fromIterable(items));
+  }
+});
 
 /// 檢查每一個 item
 final observableWithEvery = Observable.fromIterable([1, 2, 3, 4, 5])
